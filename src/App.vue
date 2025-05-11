@@ -71,14 +71,10 @@ const returnToMainScreen = () => {
 
 <style>
 :root {
-  --primary-color: #007bff;
-  --primary-dark: #0069d9;
-  --text-color: #333;
-  --light-bg: #f8f9fa;
-  --border-color: #eee;
-  --error-color: #dc3545;
-  --success-color: #28a745;
-  --warning-color: #ffc107;
+  --text-color: var(--gray-700);
+  --light-bg: var(--gray-50);
+  --border-color: var(--gray-300);
+  --success-color:  var(--success);
 }
 
 * {
@@ -91,7 +87,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--text-color);
   line-height: 1.6;
-  background-color: #f5f7fa;
+  background-color: var(--gray-50);
 }
 
 .app {
@@ -111,7 +107,7 @@ header {
 header h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
 .offline-indicator {
@@ -130,9 +126,9 @@ header h1 {
 }
 
 main {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px var(--shadow-light);
   padding: 2rem;
   margin-bottom: 2rem;
   min-height: 700px;
@@ -143,7 +139,7 @@ main {
 .initializing-fullscreen {
   padding: 2rem;
   text-align: center;
-  color: #666;
+  color: var(--gray-600);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -180,12 +176,11 @@ main {
 
 .results-container {
   flex: 1;
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray-400);
   border-radius: 8px;
   padding: 15px;
   display: flex;
   flex-direction: column;
-  height: 0;
   height: 510px;
   width: 380px;
 }
@@ -195,7 +190,7 @@ main {
   margin-bottom: 1rem;
   color: var(--text-color);
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--gray-300);
   height: 510px;
   overflow-y: scroll;
 }
@@ -249,26 +244,26 @@ main {
 }
 
 .back-button {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--primary);
+  color: var(--white);
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
 .back-button:hover {
   background-color: var(--primary-dark);
+  transition: background-color 0.2s;
 }
 
 .loading-spinner {
   width: 40px;
   height: 40px;
   margin: 0 auto 1rem;
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid var(--primary-color);
+  border: 4px solid var(--gray-200);
+  border-top: 4px solid var(--primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -281,6 +276,6 @@ main {
 footer {
   text-align: center;
   font-size: 0.8rem;
-  color: #666;
+  color: var(--gray-600);
 }
 </style>

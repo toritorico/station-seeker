@@ -100,15 +100,15 @@ input {
   width: 100%;
   padding: 12px 40px 12px 16px;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: 2px solid var(--gray-450);
   border-radius: 4px;
   transition: border-color 0.3s;
 }
 
 input:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--shadow-primary);
 }
 
 .clear-button {
@@ -116,7 +116,7 @@ input:focus {
   right: 12px;
   background: none;
   border: none;
-  color: #666;
+  color: var(--gray-600);
   font-size: 16px;
   cursor: pointer;
   padding: 4px 8px;
@@ -124,7 +124,7 @@ input:focus {
 }
 
 .clear-button:hover {
-  background-color: #f0f0f0;
+  background-color: var(--gray-200);
 }
 
 .next-characters {
@@ -133,7 +133,7 @@ input:focus {
 
 .next-characters p {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--gray-600);
   margin-bottom: 0.5rem;
 }
 
@@ -144,8 +144,8 @@ input:focus {
 }
 
 .character-button {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  background-color: var(--gray-200);
+  border: 1px solid var(--gray-400);
   border-radius: 4px;
   padding: 6px 12px;
   font-size: 0.9rem;
@@ -154,7 +154,7 @@ input:focus {
 }
 
 .character-button:hover {
-  background-color: #e0e0e0;
-  border-color: #ccc;
+  background-color: var(--gray-300);
+  border-color: var(--gray-450);
 }
 </style>

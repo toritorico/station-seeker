@@ -80,7 +80,7 @@ export default defineComponent({
 .loading-container, .error-container, .no-results {
   padding: 2rem;
   text-align: center;
-  color: #666;
+  color: var(--gray-600);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -92,8 +92,8 @@ export default defineComponent({
   width: 40px;
   height: 40px;
   margin: 0 auto 1rem;
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #007bff;
+  border: 4px solid var(--gray-200);
+  border-top: 4px solid var(--primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -106,8 +106,8 @@ export default defineComponent({
 .retry-button {
   margin-top: 1rem;
   padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--primary);
+  color: var(--white);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -115,7 +115,7 @@ export default defineComponent({
 }
 
 .retry-button:hover {
-  background-color: #0069d9;
+  background-color: var(--primary-dark);
 }
 
 .results-list {
@@ -128,7 +128,7 @@ export default defineComponent({
 
 .station-item {
   padding: 15px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--gray-300);
   cursor: pointer;
   transition: background-color 0.2s;
   display: flex;
@@ -141,12 +141,12 @@ export default defineComponent({
 }
 
 .station-item:hover {
-  background-color: #f5f5f5;
+  background-color: var(--gray-150);
 }
 
 .highlighted, .highlighted:hover {
-  background-color: #e3f2fd;
-  border-left: 4px solid #2196f3;
+  background-color: var(--secondary-light);
+  border-left: 4px solid var(--secondary);
 }
 
 .station-info {
@@ -161,17 +161,17 @@ export default defineComponent({
 }
 
 .station-code {
-  color: #666;
+  color: var(--gray-600);
   font-size: 0.85rem;
   padding: 2px 6px;
-  background-color: #f0f0f0;
+  background-color: var(--gray-200);
   border-radius: 4px;
   display: inline-block;
   width: fit-content;
 }
 
 .select-button {
-  color: #2196f3;
+  color: var(--secondary);
   font-size: 1.5rem;
   width: 30px;
   height: 30px;

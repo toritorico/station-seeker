@@ -87,9 +87,9 @@ export default defineComponent({
 }
 
 .recent-searches-container {
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray-400);
   border-radius: 8px;
-  background-color: #f7f7f7;
+  background-color: var(--gray-100);
   overflow: hidden;
 }
 
@@ -98,21 +98,21 @@ export default defineComponent({
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1rem;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ddd;
+  background-color: var(--gray-200);
+  border-bottom: 1px solid var(--gray-400);
 }
 
 .recent-header h3 {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
-  color: #333;
+  color: var(--gray-700);
 }
 
 .clear-all-button {
   background: none;
   border: none;
-  color: #e53935;
+  color: var(--danger);
   cursor: pointer;
   font-size: 0.85rem;
   padding: 4px 8px;
@@ -136,7 +136,7 @@ export default defineComponent({
 
 .recent-item {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--gray-300);
   cursor: pointer;
   transition: background-color 0.2s;
   display: flex;
@@ -149,7 +149,7 @@ export default defineComponent({
 }
 
 .recent-item:hover {
-  background-color: #e3f2fd;
+  background-color: var(--secondary-light);
 }
 
 .recent-text {
@@ -159,12 +159,12 @@ export default defineComponent({
 }
 
 .recent-station {
-  color: #666;
+  color: var(--gray-600);
   font-size: 0.9rem;
 }
 
 .recent-time {
-  color: #999;
+  color: var(--gray-500);
   font-size: 0.8rem;
   min-width: 60px;
   text-align: right;

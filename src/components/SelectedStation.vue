@@ -46,26 +46,26 @@ export default defineComponent({
 }
 
 .card {
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray-400);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow-light);
   overflow: hidden;
 }
 
 .card-header {
-  background-color: #f8f9fa;
+  background-color: var(--gray-50);
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--gray-300);
 }
 
 .card-header h3 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #333;
+  color: var(--gray-700);
 }
 
 .close-button {
@@ -79,7 +79,7 @@ export default defineComponent({
 }
 
 .close-button:hover {
-  background-color: #eee;
+  background-color: var(--gray-300);
 }
 
 .card-content {
@@ -87,7 +87,7 @@ export default defineComponent({
 }
 
 .selection-info {
-  color: #666;
+  color: var(--gray-600);
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
 }

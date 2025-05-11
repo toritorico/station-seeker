@@ -133,15 +133,15 @@ export default defineComponent({
 <style scoped>
 .touchscreen-keyboard {
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray-400);
   border-radius: 8px;
   padding: 15px;
-  background: #f7f7f7;
+  background: var(--gray-100);
 }
 
 .keyboard-display {
-  background: white;
-  border: 1px solid #ccc;
+  background: var(--white);
+  border: 1px solid var(--gray-450);
   border-radius: 4px;
   padding: 10px 15px;
   margin-bottom: 15px;
@@ -158,8 +158,8 @@ export default defineComponent({
 }
 
 .clear-button {
-  background: #f44336;
-  color: white;
+  background: var(--danger);
+  color: var(--white);
   border: none;
   border-radius: 4px;
   padding: 6px 12px;
@@ -185,8 +185,8 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
-  border: 1px solid #ccc;
+  background: var(--white);
+  border: 1px solid var(--gray-450);
   border-radius: 6px;
   font-size: 1.3rem;
   font-weight: 500;
@@ -195,18 +195,18 @@ export default defineComponent({
 }
 
 .keyboard-key:hover:not(.disabled) {
-  background: #eee;
+  background: var(--gray-300);
 }
 
 .valid-next {
-  background: #e3f2fd;
-  border-color: #2196f3;
-  color: #2196f3;
+  background: var(--secondary-light);
+  border-color: var(--secondary);
+  color: var(--secondary);
   font-weight: bold;
 }
 
 .valid-next:hover {
-  background: #bbdefb;
+  background: var(--primary-light);
 }
 
 .disabled {
@@ -221,13 +221,13 @@ export default defineComponent({
 
 .delete-key {
   width: 130px;
-  background: #ffebee;
-  border-color: #f44336;
-  color: #f44336;
+  background: var(--danger-lighter);
+  border-color: var(--danger);
+  color: var(--danger);
   font-size: 1rem;
 }
 
 .delete-key:hover:not(:disabled) {
-  background: #ffcdd2;
+  background: var(--danger-light);
 }
 </style>
