@@ -17,7 +17,7 @@ interface StationState {
   searchResults: SearchResult;
   selectedStation: Station | null;
   recentSearches: RecentSearch[];
-  trie: any; // Using any type for now, but it's a Trie
+  trie: Trie | null;
 }
 
 export const useStationStore = defineStore('station', {
@@ -146,7 +146,7 @@ export const useStationStore = defineStore('station', {
 
       try {
         const stationService = new StationService(API_URL);
-        this.stations = await stationService.getStations(true); // Force fresh data
+        this.stations = await stationService.getStations(true);
         this.initializeTrie();
       } catch (error) {
         this.error = error instanceof Error ? error.message : 'An unknown error occurred';
