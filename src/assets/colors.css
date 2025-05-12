@@ -1,16 +1,16 @@
 :root {
   /* Primary colors */
-  --primary: #007bff;
-  --primary-light: #bbdefb;
-  --primary-lighter: #e3f2fd;
-  --primary-dark: #0069d9;
+  --primary: #274c77;
+  --primary-light: #dce0ed;
+  --primary-dark: #003554;
   
   /* Secondary colors */
-  --secondary: #2196f3;
-  --secondary-light: #e3f2fd;
+  --secondary: #6096ba;
+  --secondary-light: #e7ecef;
+  --secondary-dark: #517c9a;
   
   /* Error/delete colors */
-  --danger: #f44336;
+  --danger: #bc4b51;
   --danger-light: #ffcdd2;
   --danger-lighter: #ffebee;
   

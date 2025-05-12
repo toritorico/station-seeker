@@ -1,7 +1,8 @@
 <template>
   <div v-if="selectedStation" class="selected-station">
     <div class="card">
-      <div class="card-header">
+      <h3>You are going to</h3>
+      <div class="card-station">
         <h3>{{ selectedStation.stationName }}</h3>
         <button @click="clearSelection" class="close-button">
           ✕
@@ -52,7 +53,8 @@ export default defineComponent({
   overflow: hidden;
 }
 
-.card-header {
+.card-station {
+  margin-top: 1rem;
   background-color: var(--gray-50);
   padding: 1rem;
   display: flex;
@@ -61,7 +63,7 @@ export default defineComponent({
   border-bottom: 1px solid var(--gray-300);
 }
 
-.card-header h3 {
+.card-station h3 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 500;

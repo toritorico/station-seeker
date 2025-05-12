@@ -116,7 +116,7 @@ export default defineComponent({
   cursor: pointer;
   font-size: 0.85rem;
   padding: 4px 8px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .clear-all-button:hover {

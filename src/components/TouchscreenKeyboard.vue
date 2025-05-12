@@ -136,7 +136,7 @@ export default defineComponent({
   border: 1px solid var(--gray-400);
   border-radius: 8px;
   padding: 15px;
-  background: var(--gray-100);
+  background: var(--gray-50);
 }
 
 .keyboard-display {
@@ -144,7 +144,7 @@ export default defineComponent({
   border: 1px solid var(--gray-450);
   border-radius: 4px;
   padding: 10px 15px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   min-height: 50px;
   display: flex;
   justify-content: space-between;
@@ -194,13 +194,11 @@ export default defineComponent({
   transition: all 0.2s;
 }
 
-.keyboard-key:hover:not(.disabled) {
-  background: var(--gray-300);
-}
+
 
 .valid-next {
   background: var(--secondary-light);
-  border-color: var(--secondary);
+  box-shadow: 0 2px 8px var(--shadow-light);
   color: var(--secondary);
   font-weight: bold;
 }
@@ -215,6 +213,8 @@ export default defineComponent({
 }
 
 .space-key {
+  background: var(--secondary);
+  color: var(--secondary-light);
   width: 130px;
   font-size: 1rem;
 }
@@ -225,6 +225,11 @@ export default defineComponent({
   border-color: var(--danger);
   color: var(--danger);
   font-size: 1rem;
+  font-weight: bold;
+}
+
+.space-key:hover:not(:disabled) {
+  background: var(--secondary-dark);
 }
 
 .delete-key:hover:not(:disabled) {

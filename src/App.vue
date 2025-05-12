@@ -2,7 +2,7 @@
 <template>
   <div class="app">
     <header>
-      <h1>Train Ticket Machine</h1>
+      <h1>Station Seeker</h1>
     </header>
 
     <main>
@@ -107,7 +107,7 @@ header {
 header h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .offline-indicator {
@@ -181,7 +181,7 @@ main {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  height: 510px;
+  height: 530px;
   width: 380px;
 }
 
@@ -191,7 +191,7 @@ main {
   color: var(--text-color);
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--gray-300);
-  height: 510px;
+  height: 530px;
   overflow-y: scroll;
 }
 
@@ -226,10 +226,6 @@ main {
   }
 }
 
-
-.recent-searches-container {
-}
-
 .selected-station-container {
   display: flex;
   flex-direction: column;
@@ -244,8 +240,8 @@ main {
 }
 
 .back-button {
-  background-color: var(--primary);
-  color: var(--white);
+  background: var(--primary);
+  color: var(--secondary-light);
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
