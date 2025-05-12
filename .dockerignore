@@ -1,0 +1,14 @@
+node_modules
+.git
+.github
+.gitignore
+.DS_Store
+.vscode
+*.log
+*.md
+!README.md
+Dockerfile*
+docker-compose*
+.env.local
+.env.*.local
+dist
