@@ -6,7 +6,7 @@ import type {RecentSearch} from "../types/recent-search.ts";
 import type {SearchResult} from "../types/search-result.ts";
 import {Trie} from "../utils/trie/Trie.ts";
 
-const API_URL = import.meta.env.API_URL as string;
+const API_URL = import.meta.env.VITE_API_URL as string;
 
 interface StationState {
   stations: Station[];

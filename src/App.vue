@@ -36,7 +36,7 @@
     </main>
 
     <footer>
-      <p> 2025 Train Station Seeker | For job seeking purposes only 😎</p>
+      <p> 2025 Train Station Seeker | Author: Filip Byczek | For job seeking purposes only 😎</p>
     </footer>
   </div>
 </template>

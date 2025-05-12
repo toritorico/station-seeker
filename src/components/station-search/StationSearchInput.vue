@@ -47,7 +47,7 @@ export default defineComponent({
       default: true
     }
   },
-  setup(props) {
+  setup() {
     const stationStore = useStationStore();
     const searchText = ref('');
 
