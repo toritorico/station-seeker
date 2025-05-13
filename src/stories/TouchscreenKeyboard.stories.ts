@@ -18,6 +18,7 @@ const meta = {
         // Initialize store with mock data
         const store = useStationStore(pinia);
         store.$patch({
+          //ts-ignore
           stations: [
             { id: '1', name: 'DARTFORD' },
             { id: '2', name: 'DARTON' },
@@ -47,10 +48,11 @@ export const Initial: Story = {
 // Story with some text entered and specific next characters
 export const WithSearchText: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async () => {
     const store = useStationStore();
     store.updateSearch('DART');
     store.$patch({
+      //ts-ignore
       trie: undefined,
       searchResults: {
         matchingStations: [
@@ -66,7 +68,7 @@ export const WithSearchText: Story = {
 // Story showing disabled state
 export const AllDisabled: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async () => {
     const store = useStationStore();
     store.updateSearch('KINGS');
     store.$patch({

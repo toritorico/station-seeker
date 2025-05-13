@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, watch } from 'vue';
+import { defineComponent, computed, ref, watch, getCurrentInstance } from 'vue';
 import { useStationStore } from "../../stores/stationStore.ts";
 import type { Station } from "../../types/station.ts";
 import { SimpleAnalytics } from "../../services/analytics";
@@ -45,17 +45,29 @@ import { SimpleAnalytics } from "../../services/analytics";
 export default defineComponent({
   name: 'StationSearchResults',
   setup() {
+    // Access the global $statsig instance
+    const { appContext } = getCurrentInstance()!;
+    const statsig = appContext.config.globalProperties.$statsig;
     const stationStore = useStationStore();
     const searchStartTime = ref<number>(Date.now());
 
     // Select a station
     const selectStation = (station: Station) => {
+      // Local analytics for station selection
       SimpleAnalytics.trackEvent('station_selected', {
         station_name: station.stationName,
         station_code: station.stationCode,
         from_search: stationStore.searchText,
         selection_time_ms: Date.now() - searchStartTime.value
       });
+      // Statsig event for station selection
+      if (statsig) {
+        statsig.logEvent('station_selected', station.stationCode, {
+          station_name: station.stationName,
+          from_search: stationStore.searchText,
+          selection_time_ms: Date.now() - searchStartTime.value
+        });
+      }
       stationStore.selectStation(station);
     };
 
@@ -67,11 +79,20 @@ export default defineComponent({
 
     // Watch for search results changes
     watch(() => stationStore.searchResults.matchingStations, (stations) => {
+      // Local analytics for station search
       SimpleAnalytics.trackEvent('search_results', {
         query: stationStore.searchText,
         results_count: stations.length,
         next_chars: stationStore.searchResults.nextCharacters.join('')
       });
+      // Statsig event for station search
+      if (statsig) {
+        statsig.logEvent('station_search', stationStore.searchText, {
+          results_count: stations.length,
+          next_chars: stationStore.searchResults.nextCharacters.join(''),
+          results: stations.map(s => ({ name: s.stationName, code: s.stationCode }))
+        });
+      }
     });
 
     return {

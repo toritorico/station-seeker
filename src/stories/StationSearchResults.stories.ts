@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import StationSearchResults from '../components/station-search/StationSearchResults.vue';
 import { useStationStore } from '../stores/stationStore';
-import { createPinia } from 'pinia';
-
-// Create a fresh Pinia instance
-const pinia = createPinia();
 
 // Meta for the component
 const meta = {
@@ -27,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 // Base story - Loading state
 export const Loading: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async () => {
     const store = useStationStore();
     store.$patch({
       isLoading: true,
@@ -43,7 +39,7 @@ export const Loading: Story = {
 // Story with search results for "CH"
 export const WithResults: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async () => {
     const store = useStationStore();
     store.$patch({
       isLoading: false,
@@ -63,7 +59,7 @@ export const WithResults: Story = {
 // Story with no results
 export const NoResults: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async () => {
     const store = useStationStore();
     store.$patch({
       isLoading: false,
@@ -79,7 +75,7 @@ export const NoResults: Story = {
 // Story with error state
 export const Error: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async () => {
     const store = useStationStore();
     store.$patch({
       isLoading: false,

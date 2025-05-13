@@ -138,30 +138,19 @@ In a production environment, analytics events would typically be sent to an exte
 
 ---
 
-## Storybook Usage
+## Statsig Analytics Integration
 
-- Each major component has a corresponding Storybook file in [`src/stories`](src/stories).
-- Stories showcase all important states for each component, including:
-  - **Empty state** (e.g., no data)
-  - **Filled state** (e.g., with results or user input)
-  - **Error state** (e.g., failed fetch or validation error)
-  - **Loading state** (where applicable)
-- Stories use mock data and the Pinia store to simulate real-world scenarios.
-- You can view and interact with components in these states directly in the Storybook UI.
+**Note that for Statsig to initialize properly, you have to provide SDK_KEY in the .env**
 
-### Running Storybook
+This project integrates [Statsig](https://statsig.com/) for analytics and experimentation. Statsig is used to capture and analyze key user interactions, such as which train stations are selected.
 
-To start Storybook locally:
+### What is Tracked?
+- **App usage**: Each time the app is opened, an event is logged.
+- **Station selection**: Every time a user selects a station from the results, a `station_selected` event is sent to Statsig, including the station name and code.
 
-```bash
-npm run storybook
-```
+### Example Use Case: Most Popular Stations
+By aggregating `station_selected` events in Statsig, you can easily determine which stations are the most popular among users. This data can be visualized in Statsig's dashboard to gain actionable insights into user preferences and behavior.
 
-This will launch Storybook at [http://localhost:6006](http://localhost:6006) by default.
+Below is a preview of how the popularity of stations can be visualized in Statsig:
 
-### Example Stories
-- `RecentSearchesList.stories.ts`: Shows empty, 5 searches, and 10 searches states.
-- `StationSearchResults.stories.ts`: Demonstrates loading, results, no results, and error states.
-- `TouchscreenKeyboard.stories.ts`: Includes initial, with search text, and all-disabled states.
-
-For more details, see the files in [`src/stories`](src/stories).
+![Statsig Popular Stations Example](src/assets/images/statsig1.png)

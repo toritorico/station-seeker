@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import RecentSearchesList from '../components/RecentSearchesList.vue';
 import { useStationStore } from '../stores/stationStore';
-import { createPinia } from 'pinia';
-
-// Create a fresh Pinia instance
-const pinia = createPinia();
 
 // Helper function to create timestamps for different times
 const createTimestamp = (minutesAgo: number) => {
@@ -34,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 // Empty state
 export const Empty: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async () => {
     const store = useStationStore();
     store.$patch({
       recentSearches: []
@@ -45,7 +41,7 @@ export const Empty: Story = {
 // 5 Recent Searches
 export const FiveSearches: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async () => {
     const store = useStationStore();
     store.$patch({
       recentSearches: [
@@ -77,7 +73,7 @@ export const FiveSearches: Story = {
 // 10 Recent Searches (Maximum)
 export const TenSearches: Story = {
   args: {},
-  play: async ({ canvasElement }) => {
+  play: async () => {
     const store = useStationStore();
     store.$patch({
       recentSearches: [
