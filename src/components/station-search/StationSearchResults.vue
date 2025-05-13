@@ -37,24 +37,42 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import {useStationStore} from "../../stores/stationStore.ts";
-import type {Station} from "../../types/station.ts";
+import { defineComponent, computed, ref, watch } from 'vue';
+import { useStationStore } from "../../stores/stationStore.ts";
+import type { Station } from "../../types/station.ts";
+import { SimpleAnalytics } from "../../services/analytics";
 
 export default defineComponent({
   name: 'StationSearchResults',
   setup() {
     const stationStore = useStationStore();
+    const searchStartTime = ref<number>(Date.now());
 
     // Select a station
     const selectStation = (station: Station) => {
+      SimpleAnalytics.trackEvent('station_selected', {
+        station_name: station.stationName,
+        station_code: station.stationCode,
+        from_search: stationStore.searchText,
+        selection_time_ms: Date.now() - searchStartTime.value
+      });
       stationStore.selectStation(station);
     };
 
     // Refresh stations data
     const refreshStations = async () => {
       await stationStore.refreshStations();
+      searchStartTime.value = Date.now();
     };
+
+    // Watch for search results changes
+    watch(() => stationStore.searchResults.matchingStations, (stations) => {
+      SimpleAnalytics.trackEvent('search_results', {
+        query: stationStore.searchText,
+        results_count: stations.length,
+        next_chars: stationStore.searchResults.nextCharacters.join('')
+      });
+    });
 
     return {
       isLoading: computed(() => stationStore.isLoading),

@@ -37,7 +37,8 @@
 
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue';
-import {useStationStore} from "../../stores/stationStore.ts";
+import { useStationStore } from "../../stores/stationStore.ts";
+import { SimpleAnalytics } from "../../services/analytics";
 
 export default defineComponent({
   name: 'StationSearchInput',
@@ -59,16 +60,25 @@ export default defineComponent({
     // Handle input changes
     const handleInput = () => {
       stationStore.updateSearch(searchText.value);
+      SimpleAnalytics.trackEvent('search_input', {
+        query: searchText.value,
+        query_length: searchText.value.length
+      });
     };
 
     // Clear the search
     const clearSearch = () => {
+      SimpleAnalytics.trackEvent('search_cleared');
       searchText.value = '';
       stationStore.updateSearch('');
     };
 
     // Append a character to the search
     const appendCharacter = (char: string) => {
+      SimpleAnalytics.trackEvent('character_selected', {
+        character: char,
+        current_query: searchText.value
+      });
       searchText.value += char;
       stationStore.updateSearch(searchText.value);
     };

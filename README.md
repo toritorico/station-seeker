@@ -18,6 +18,8 @@ A Vue.js application for searching train stations, featuring a touchscreen-style
 - Vite for fast development
 - Trie data structure for efficient station filtering
 
+---
+
 ## Running with Docker
 
 This application is containerized with Docker for easy setup and deployment.
@@ -81,6 +83,8 @@ docker stop station-search-app
 docker rm station-search-app
 ```
 
+---
+
 ## Development Setup
 
 If you prefer to run the application without Docker for development:
@@ -96,3 +100,68 @@ npm install
 ```bash
 npm run dev
 ```
+
+---
+
+## User Behavior Analytics (Demo Implementation)
+
+### Overview
+
+This application includes a **custom analytics system** for tracking user behavior and search interactions. The analytics are implemented purely on the client side and are intended for demonstration purposes only. No data is sent to any external server or third-party service.
+
+### Why This Approach?
+- **Simplicity:** For this coding assignment, there is no need to send analytics data externally.
+- **Showcasing Analytics Usage:** The implementation demonstrates how analytics tracking can be integrated into a modern web application, including event tracking and a debug UI.
+- **Extensibility:** In a real-world scenario, the tracking logic could be easily adapted to send data to services like Google Analytics, Mixpanel, or a custom backend.
+
+### How It Works
+- Analytics events are tracked using the `SimpleAnalytics` class (`src/services/analytics.ts`).
+- Events are stored in-memory and persisted in the browser's `localStorage`.
+- Tracked events include search input, search results, station selection and character selection.
+- A debug UI (`AnalyticsDebug.vue`) is available to view, inspect, and clear tracked events in real-time.
+
+### Using the Analytics Debug UI
+- The debug panel appears as a floating button at the bottom-right of the app.
+- Click **"Show Analytics"** to expand the panel and view all tracked events (event name, timestamp, parameters).
+- Click **"Clear Events"** to reset the analytics history (removes all events from memory and storage).
+- The panel updates in real-time as you interact with the app.
+
+### Example Events Tracked
+- `search_input`: When the user types in the search box
+- `search_results`: When search results are updated
+- `station_selected`: When a station is selected
+- `character_selected`: When a suggested character is clicked
+- `search_cleared`: When the search is cleared
+
+### Real-World Analytics
+In a production environment, analytics events would typically be sent to an external analytics service for aggregation and analysis. This demo implementation keeps all data local for simplicity, privacy, and to showcase tracking logic without any setup or cost.
+
+---
+
+## Storybook Usage
+
+- Each major component has a corresponding Storybook file in [`src/stories`](src/stories).
+- Stories showcase all important states for each component, including:
+  - **Empty state** (e.g., no data)
+  - **Filled state** (e.g., with results or user input)
+  - **Error state** (e.g., failed fetch or validation error)
+  - **Loading state** (where applicable)
+- Stories use mock data and the Pinia store to simulate real-world scenarios.
+- You can view and interact with components in these states directly in the Storybook UI.
+
+### Running Storybook
+
+To start Storybook locally:
+
+```bash
+npm run storybook
+```
+
+This will launch Storybook at [http://localhost:6006](http://localhost:6006) by default.
+
+### Example Stories
+- `RecentSearchesList.stories.ts`: Shows empty, 5 searches, and 10 searches states.
+- `StationSearchResults.stories.ts`: Demonstrates loading, results, no results, and error states.
+- `TouchscreenKeyboard.stories.ts`: Includes initial, with search text, and all-disabled states.
+
+For more details, see the files in [`src/stories`](src/stories).

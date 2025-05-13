@@ -38,6 +38,8 @@
     <footer>
       <p> 2025 Train Station Seeker | Author: Filip Byczek | For job seeking purposes only 😎</p>
     </footer>
+
+    <AnalyticsDebug />
   </div>
 </template>
 
@@ -48,6 +50,7 @@ import StationSearchResults from './components/station-search/StationSearchResul
 import TouchscreenKeyboard from "./components/TouchscreenKeyboard.vue";
 import RecentSearchesList from "./components/RecentSearchesList.vue";
 import SelectedStation from "./components/SelectedStation.vue";
+import AnalyticsDebug from "./components/analytics/AnalyticsDebug.vue";
 
 // Load store data
 const stationStore = useStationStore();
