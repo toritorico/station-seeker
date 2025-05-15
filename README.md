@@ -20,6 +20,21 @@ A Vue.js application for searching train stations, featuring a touchscreen-style
 
 ---
 
+## Word from the developer
+
+Hi, welcome to my code assignment. I hope you'll find my code easy to process and assess. There are some things I would change/finish given more time. But I really wanted to deliver within the given timeframe.
+
+#### What I am happy with:
+ - **Successfull trie implementation.** I've found this solution the most elegant and best suited for the job. As was hinted in the project requirements, once it loads, it is almost real-time fast.
+ - **Background caching.**  Once cached, the data is always at hand, no matter the internet connection and loading time. From the user perspective, the app works seamlessly, no matter the connection with the data source.
+ - **Hand-made components.** I deliberately avoided using pre-made components/packages (for the keyboard especially) In order to demonstrate my ability to create my own custom and working components.
+
+#### What I would revisit:
+ - **Styling.** I have to admit, I am not proud of styles implementation here. I got a bit carried away on implementing the StoryBooks, which was new to me at the time, and ended up styling each component individually to better see what I can do inside my stories. I intended to clean this up later on, but we all know how this attitude works out... 
+In shorter words, if given more time, I would certainly move much of the styling to a global scss file, as it is with color variables.
+
+---
+
 ## Running with Docker
 
 This application is containerized with Docker for easy setup and deployment.
