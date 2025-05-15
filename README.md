@@ -33,6 +33,8 @@ Hi, welcome to my code assignment. I hope you'll find my code easy to process an
  - **Styling.** I have to admit, I am not proud of styles implementation here. I got a bit carried away on implementing the StoryBooks, which was new to me at the time, and ended up styling each component individually to better see what I can do inside my stories. I intended to clean this up later on, but we all know how this attitude works out... 
 In shorter words, if given more time, I would certainly move much of the styling to a global scss file, as it is with color variables.
 
+ - **A/B testing**. There is certainly a room fore more tests / scearios to be done.
+
 ---
 
 ## Running with Docker
